@@ -1,0 +1,40 @@
+{
+  "name": "codetrek",
+  "description": "A framework for teacher and student learning interaction",
+  "version": "0.0.1",
+  "license": "",
+  "author": "Abhishek Sisodia, Gunjan Pandya, Naqi Rizvi, Nirmal Patel",
+  "keywords": [
+    "codetrek",
+    "education",
+    "teacher",
+    "student",
+    "canadalearningcode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/df-hackdays/pitchers"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write '**/*.js'"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.1.0",
+    "@material-ui/icons": "^3.0.1",
+    "gatsby": "2.0.6",
+    "gatsby-plugin-manifest": "2.0.2",
+    "gatsby-plugin-offline": "2.0.5",
+    "gatsby-plugin-react-helmet": "3.0.0",
+    "jss": "^9.8.7",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-helmet": "^5.2.0",
+    "react-jss": "^8.6.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.3"
+  }
+}
