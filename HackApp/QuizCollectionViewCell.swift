@@ -64,10 +64,10 @@ class QuizCollectionViewCell: UICollectionViewCell {
     
     func setupViews() {
         addSubview(imgView)
-        imgView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive=true
+        imgView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive=true
         imgView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive=true
-        imgView.widthAnchor.constraint(equalToConstant: 150).isActive=true
-        imgView.heightAnchor.constraint(equalTo: imgView.widthAnchor).isActive=true
+        imgView.widthAnchor.constraint(equalToConstant: 250).isActive=true
+        imgView.heightAnchor.constraint(equalToConstant: 150).isActive=true
         
         addSubview(lblQue)
         lblQue.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 10).isActive=true

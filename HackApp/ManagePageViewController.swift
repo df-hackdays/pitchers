@@ -84,26 +84,29 @@ class ManagePageViewController: UIPageViewController {
     dataSource = self
     self.navigationItem.setHidesBackButton(true, animated: false)
     self.navigationController?.navigationItem.setHidesBackButton(true, animated: true)
-    self.title = "CodeTrek"
-    
-    goToNextStep()
-    
+    self.title = "DigiKnow"
   }
   
-    func goToNextStep() {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.quizArray = QuizData.quizArray
         self.photos = QuizData.photoArray
         
+         goToNextStep()
+
+    }
+    
+    func goToNextStep() {
         DispatchQueue.main.async {
-            // 1
             if let viewController = self.viewPhotoCommentController(self.currentIndex ?? 0) {
                 let viewControllers = [viewController]
-                // 2
-                self.setViewControllers(viewControllers,
-                                   direction: .forward,
-                                   animated: false,
-                                   completion: nil)
+
+                self.setViewControllers(
+                    viewControllers,
+                    direction: .forward,
+                    animated: false,
+                    completion: nil
+                )
             }
         }
     }

@@ -10,12 +10,8 @@ import UIKit
 
 class SurveyTabViewController: UITabBarController {
 
-    var photos: [String] = []
-    var quizArray: [Quiz] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        QuizData.saveQuizData(quizes: self.quizArray, photos: self.photos)
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationController?.navigationItem.setHidesBackButton(true, animated: true)
     }
