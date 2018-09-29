@@ -61,6 +61,7 @@ class LoginViewController: UIViewController {
                     }
                     atlasMongoClient.db("digilearn").collection("digiquiz")
                         .find(Document()).asArray({ result in
+//                            print(result)
                             switch result {
                             case .success(let result):
                                 for eachDoc in result {

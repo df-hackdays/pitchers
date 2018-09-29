@@ -15,24 +15,13 @@ class ResultVC: UIViewController {
     var totalScore: Int?
     var points: String = ""
     var quizId: String?
+    var quiz: Quiz?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
         view.backgroundColor = UIColor.white
         setupViews()
-        
-        do {
-            let client = try Stitch.initializeDefaultAppClient(
-                withClientAppID: "digiknow-mcfek"
-            )
-            
-            client.callFunction(withName: "increment", withArgs: ["", points]) { result in
-                /* ... */
-            }
-        } catch _ {
-            
-        }
         
     }
     
@@ -96,7 +85,9 @@ class ResultVC: UIViewController {
         btnRestart.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnRestart.addTarget(self, action: #selector(btnRestartAction), for: .touchUpInside)
         
-        lblRating.text="You won \(points) points"
+        if let q = quiz {
+            lblRating.text="You won \(q.points) points"
+        }
     }
     
     let lblTitle: UILabel = {
