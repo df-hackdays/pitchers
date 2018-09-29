@@ -35,7 +35,7 @@ import StitchRemoteMongoDBService
 import MongoSwiftMobile // required for BSON Documents
 
 struct Quiz: Codable {
-    var quizId: String = ""
+    var quizId: Int = -1
     var quizName: String = ""
     var shortDescription: String = ""
     var points: String = ""
@@ -50,7 +50,7 @@ struct Quiz: Codable {
     var a3: Int = -1
     
     init?(document: Document) {
-        self.quizId = document["_id.$oid"] as? String ?? ""
+        self.quizId = document["id"] as? Int ?? -1
         self.quizName = document["quizName"] as? String ?? ""
         self.shortDescription = document["shortDescription"] as? String ?? ""
         self.points = document["points"] as? String ?? ""

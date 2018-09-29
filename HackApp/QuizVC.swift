@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StitchCore
 
 struct Question {
     let imgName: String
@@ -95,7 +96,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             v.score = score
             v.totalScore = questionsArray.count
             if let q = quiz {
-                v.points = q.points
+                v.quiz = q
             }
             self.navigationController?.pushViewController(v, animated: false)
             return
