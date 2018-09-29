@@ -89,7 +89,7 @@ export class AddQuizzesPage extends React.Component {
               Create Quiz
       </Typography>
               <Grid container spacing={24} >
-                <Grid item xs={12} lg={12} md={12} style={{ marginTop: 10 }}>
+                <Grid item xs={12} lg={6} md={6} style={{ marginTop: 10 }}>
                   <TextField
                     id="quizName"
                     label="Name"
@@ -99,21 +99,11 @@ export class AddQuizzesPage extends React.Component {
                   />
                 </Grid>
 
-                <Grid item xs={12} lg={12} md={12} style={{ marginTop: 10 }}>
+                <Grid item xs={12} lg={6} md={6} style={{ marginTop: 10 }}>
                   <TextField
                     id="quizDescription"
                     label="Description"
                     placeholder="Quiz Description"
-                    className="contact-page-name-list-field"
-                    margin="normal"
-                  />
-                </Grid>
-
-                <Grid item xs={12} lg={12} md={12} style={{ marginTop: 10 }}>
-                  <TextField
-                    id="quizPoints"
-                    label="Points"
-                    placeholder="Points for Quiz"
                     className="contact-page-name-list-field"
                     margin="normal"
                   />
@@ -289,6 +279,18 @@ export class AddQuizzesPage extends React.Component {
                     margin="normal"
                   />
                 </Grid>
+
+                <Grid item xs={12} lg={6} md={6} style={{ marginTop: 10 }}>
+                  <TextField
+                    id="quizPoints"
+                    label="Points"
+                    placeholder="Points for Quiz"
+                    className="contact-page-name-list-field"
+                    margin="normal"
+                  />
+                </Grid>
+
+                <Grid item xs={12} lg={6} md={6} style={{ marginTop: 10 }}></Grid>
 
                 <Grid item xs={12} lg={12} md={12} style={{ marginTop: 10 }}>
                   <Button type="button" color="primary" variant="raised" onClick={this.onSubmit}>Submit</Button>

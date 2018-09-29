@@ -27,6 +27,9 @@ import { Stitch, RemoteMongoClient } from 'mongodb-stitch-browser-sdk'
 
 const stitchClient = Stitch.defaultAppClient;
 
+const OnClick = (props) => () => {
+    props.history.push("/addquizzes");
+};
 
 export class QuizzesPage extends React.Component {
 
@@ -62,22 +65,35 @@ export class QuizzesPage extends React.Component {
             < div className="landingPagebodyComponent" >
                 <Grid container spacing={24} justify="center">
                     <Grid item xs={12}>
-
                     </Grid>
-                    {console.log(this.state.quizzes)}
+                    <Typography variant="headline" component="h3">
+                        <div className="padding10">
+                            Quizzes
+                        </div>
+                    </Typography>
+                    <Grid item xs={12} lg={12} md={12} style={{ marginTop: 10 }}></Grid>
                     {this.state.quizzes.map((quiz) => {
-                        { console.log(this.state.quizzes) }
                         return (
-                            <Card className="padding10">
-                                <div>Name: {quiz.quizName}</div>
-                                <div>Short Description: {quiz.shortDescription}</div>
-                            </Card>
+                            <div className="quizcard">
+
+                                <Grid item xs={12} lg={12} md={12} style={{ marginTop: 10 }}>
+                                    <Card className="padding10">
+                                        <div>Name: {quiz.quizName}</div>
+                                        <div>Short Description: {quiz.shortDescription}</div>
+                                    </Card>
+                                </Grid>
+                            </div>
+
                         )
                     })}
+
+                    <Grid item xs={12} lg={12} md={12} style={{ marginTop: 10 }}></Grid>
                     <Grid item xs={12}>
 
                     </Grid>
-                    <Link to="/addquizzes"></Link>
+                    <Button variant="raised" color="primary" onClick={OnClick(this.props)}><Typography variant="button" gutterBottom className="logintypography">
+                        Create a New Course
+                    </Typography></Button>
                     <Grid container spacing={24} >
                         <Grid item xs={12} md={12}>
 

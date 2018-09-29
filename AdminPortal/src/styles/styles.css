@@ -85,6 +85,12 @@ color:inherit;
     padding: 10px;
 }
 
+.quizcard {
+    width: 100%;
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: center;
+}
 
 .footer-container-box {
     background-color: #f1f3f4;
