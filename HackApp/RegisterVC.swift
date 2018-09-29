@@ -27,7 +27,7 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func registerButtonTapped(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
+        dismiss(animated: true)
     }
     
     /*
