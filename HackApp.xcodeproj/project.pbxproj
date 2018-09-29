@@ -26,6 +26,7 @@
 		3AD7EC33215FB6060010FE34 /* StitchLocalMongoDBService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD7EC32215FB6060010FE34 /* StitchLocalMongoDBService.framework */; };
 		3AD7EC35215FB6060010FE34 /* StitchRemoteMongoDBService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD7EC34215FB6060010FE34 /* StitchRemoteMongoDBService.framework */; };
 		3AD7EC37215FB6250010FE34 /* Pods_HackApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD7EC36215FB6250010FE34 /* Pods_HackApp.framework */; };
+		AE8C0F8F215FD3B100158ED8 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C0F8E215FD3B100158ED8 /* RegisterVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		3AD7EC34215FB6060010FE34 /* StitchRemoteMongoDBService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchRemoteMongoDBService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD7EC36215FB6250010FE34 /* Pods_HackApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_HackApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D28E20DA6C0C487099F78E5 /* Pods_HackApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE8C0F8E215FD3B100158ED8 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		E4DB831C8029D515F155F63D /* Pods-HackApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackApp/Pods-HackApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				241CAF28215F494C00BA39F5 /* Assets.xcassets */,
 				241CAF2A215F494C00BA39F5 /* LaunchScreen.storyboard */,
 				241CAF2D215F494C00BA39F5 /* Info.plist */,
+				AE8C0F8E215FD3B100158ED8 /* RegisterVC.swift */,
 			);
 			path = HackApp;
 			sourceTree = "<group>";
@@ -1008,6 +1011,7 @@
 				241CAF34215F49A200BA39F5 /* QuizVC.swift in Sources */,
 				241CAF22215F494900BA39F5 /* AppDelegate.swift in Sources */,
 				241CAF3D215F5D0E00BA39F5 /* PhotoCommentViewController.swift in Sources */,
+				AE8C0F8F215FD3B100158ED8 /* RegisterVC.swift in Sources */,
 				241CAF3E215F5D0E00BA39F5 /* ManagePageViewController.swift in Sources */,
 				241CAF36215F49D700BA39F5 /* QuizCollectionViewCell.swift in Sources */,
 			);
