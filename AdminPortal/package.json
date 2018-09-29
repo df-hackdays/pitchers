@@ -1,7 +1,7 @@
 {
-  "name": "digino-admin",
+  "name": "digiknow-admin",
   "version": "1.0.0",
-  "description": "Admin Portal for Digino App",
+  "description": "Admin Portal for digiknow App",
   "main": "app.js",
   "scripts": {
     "build": "webpack",

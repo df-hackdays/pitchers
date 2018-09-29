@@ -16,12 +16,14 @@ const stitchClient = Stitch.defaultAppClient;
 const OnClickLogin = (props) => () => {
   stitchClient.auth.loginWithCredential(new AnonymousCredential()).then(user => {
     console.log(`logged in anonymously as user ${user.id}`)
-    props.history.push("/quizzes");
+    props.history.push("/addquizzes");
   });
 
 };
 
 class LandingPage extends React.Component {
+
+
 
   render() {
     return (
@@ -29,7 +31,7 @@ class LandingPage extends React.Component {
         {console.log(this)}
         <br />
         <Typography variant="display3" gutterBottom align="center">
-          Welcome to the Digino Admin Portal
+          Welcome to the digiknow Admin Portal
       </Typography>
 
         <Grid container spacing={24} >

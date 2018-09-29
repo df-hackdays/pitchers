@@ -106,7 +106,7 @@ class Header extends React.Component {
                 <MenuIcon />
               </IconButton>
               <Typography variant="title" color="secondary" className="headertypoclass" >
-                Digino Admin Portal
+                digiknow Admin Portal
           </Typography>
 
             </Toolbar>

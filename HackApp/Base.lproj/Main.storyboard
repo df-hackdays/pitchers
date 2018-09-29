@@ -184,14 +184,25 @@
                     <view key="view" contentMode="scaleToFill" id="CkP-cX-Y5l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invite-new" translatesAutoresizingMaskIntoConstraints="NO" id="uUs-E6-7vN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uUs-E6-7vN" firstAttribute="bottom" secondItem="Ctg-Gl-lII" secondAttribute="bottom" id="QlB-Uu-vHh"/>
+                            <constraint firstItem="uUs-E6-7vN" firstAttribute="top" secondItem="Ctg-Gl-lII" secondAttribute="top" id="Wc4-rU-Z5S"/>
+                            <constraint firstItem="uUs-E6-7vN" firstAttribute="leading" secondItem="Ctg-Gl-lII" secondAttribute="leading" id="tr6-rY-nzA"/>
+                            <constraint firstItem="uUs-E6-7vN" firstAttribute="trailing" secondItem="Ctg-Gl-lII" secondAttribute="trailing" id="zhY-MY-AMW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ctg-Gl-lII"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Friends" image="following" id="23z-7G-KZo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kN-dg-TiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-906" y="1873"/>
+            <point key="canvasLocation" x="-906.39999999999998" y="1872.4137931034484"/>
         </scene>
         <!--Account-->
         <scene sceneID="1Je-2c-TZN">
@@ -267,7 +278,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dwM-cN-yO4" firstAttribute="centerX" secondItem="b1C-nx-fJx" secondAttribute="centerX" id="BqV-la-pkK"/>
                             <constraint firstItem="b1C-nx-fJx" firstAttribute="leading" secondItem="hGz-fG-OrQ" secondAttribute="leading" constant="16" id="Dt8-fa-jgM"/>
@@ -553,6 +564,7 @@
         <image name="following" width="30" height="30"/>
         <image name="gplay" width="488" height="488"/>
         <image name="home" width="30" height="30"/>
+        <image name="invite-new" width="614" height="904"/>
         <image name="logo" width="512" height="512"/>
         <image name="photo1" width="1024" height="768"/>
         <image name="scene-header" width="864" height="304"/>
