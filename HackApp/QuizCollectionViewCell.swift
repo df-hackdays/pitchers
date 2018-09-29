@@ -20,6 +20,7 @@ class QuizCollectionViewCell: UICollectionViewCell {
     var btnsArray = [UIButton]()
     
     weak var delegate: QuizCVCellDelegate?
+    var info: String = ""
     
     var question: Question? {
         didSet {
@@ -69,10 +70,10 @@ class QuizCollectionViewCell: UICollectionViewCell {
         imgView.heightAnchor.constraint(equalTo: imgView.widthAnchor).isActive=true
         
         addSubview(lblQue)
-        lblQue.topAnchor.constraint(equalTo: imgView.bottomAnchor).isActive=true
+        lblQue.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 10).isActive=true
         lblQue.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive=true
         lblQue.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive=true
-        lblQue.heightAnchor.constraint(equalToConstant: 150).isActive=true
+        lblQue.heightAnchor.constraint(equalToConstant: 180).isActive=true
         
         let btnWidth: CGFloat = 180
         let btnHeight: CGFloat = 50
@@ -125,8 +126,9 @@ class QuizCollectionViewCell: UICollectionViewCell {
         lbl.text="This is a question and you have to answer it?"
         lbl.textColor=UIColor.black
         lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 16)
-        lbl.numberOfLines=4
+        lbl.font = UIFont.systemFont(ofSize: 15)
+        lbl.numberOfLines=0
+        lbl.adjustsFontSizeToFitWidth = true
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
     }()
