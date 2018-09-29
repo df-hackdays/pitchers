@@ -51,7 +51,8 @@ class LoginViewController: UIViewController {
             // Log-in using an Anonymous authentication provider from Stitch
             // Then create a connection to a remote MongoDB instance
             // Finally pull documents from the remote instance and add them to MongoDB Mobile
-            client.auth.login(withCredential: AnonymousCredential()) { result in
+            let credential = UserPasswordCredential.init(withUsername: usernameTextField.text!, withPassword: passwordTextField.text!)
+            Stitch.defaultAppClient!.auth.login(withCredential: credential) { result in
                 switch result {
                 case .success:
                     let atlasMongoClient = client.serviceClient(fromFactory: remoteMongoClientFactory, withName: "mongodb-atlas")
@@ -84,14 +85,21 @@ class LoginViewController: UIViewController {
                                 }
                             case .failure(let error):
                                 print("failed to find documents: \(error)")
+                                DispatchQueue.main.async {
+                                    self.activityIndicator.stopAnimating()
+                                }
                             }
                         })
                 case .failure(let error):
                     print("failed to login: \(error)")
+                    DispatchQueue.main.async {
+                        self.activityIndicator.stopAnimating()
+                    }
                 }
             }
         } catch _ {
             print("error")
+            self.activityIndicator.stopAnimating()
         }
     }
     override func didReceiveMemoryWarning() {
