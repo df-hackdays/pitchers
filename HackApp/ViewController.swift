@@ -13,14 +13,26 @@ class ViewController: UIViewController {
     var window: UIWindow?    
     var quiz: Quiz?
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let q = quiz {
+            lblTitle.text = q.shortDescription
+            let v = QuizVC()
+            v.quiz = q
+            self.navigationController?.pushViewController(v, animated: false)
+        }
+        
+        self.navigationController?.navigationBar.isHidden = false
+        title = "DIGIKNOW"
+        self.navigationItem.setHidesBackButton(false, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor=UIColor.white
         
         setupViews()
-        if let q = quiz {
-            lblTitle.text = q.shortDescription
-        }
+        
     }
     
     @objc func btnGetStartedAction() {
@@ -37,12 +49,13 @@ class ViewController: UIViewController {
         lblTitle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         lblTitle.widthAnchor.constraint(equalToConstant: 250).isActive=true
         lblTitle.heightAnchor.constraint(equalToConstant: 200).isActive=true
-        
+        lblTitle.isHidden = true
         self.view.addSubview(btnGetStarted)
         btnGetStarted.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnGetStarted.widthAnchor.constraint(equalToConstant: 150).isActive=true
         btnGetStarted.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         btnGetStarted.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive=true
+        btnGetStarted.isHidden = true
     }
     
     let lblTitle: UILabel = {

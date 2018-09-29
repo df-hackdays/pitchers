@@ -82,8 +82,8 @@ class ManagePageViewController: UIPageViewController {
     super.viewDidLoad()
     
     dataSource = self
-    self.navigationItem.setHidesBackButton(true, animated: false)
-    self.navigationController?.navigationItem.setHidesBackButton(true, animated: true)
+    //self.navigationItem.setHidesBackButton(true, animated: false)
+    //self.navigationController?.navigationItem.setHidesBackButton(true, animated: true)
     self.title = "DigiKnow"
   }
   

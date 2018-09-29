@@ -51,6 +51,7 @@ class QuizCollectionViewCell: UICollectionViewCell {
     @objc func btnOptionAction(sender: UIButton) {
         guard let unwrappedQue = question else { return }
         if !unwrappedQue.isAnswered {
+            lblQue.font = UIFont.systemFont(ofSize: 15)
             delegate?.didChooseAnswer(btnIndex: sender.tag)
         }
     }
@@ -126,7 +127,7 @@ class QuizCollectionViewCell: UICollectionViewCell {
         lbl.text="This is a question and you have to answer it?"
         lbl.textColor=UIColor.black
         lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 15)
+        lbl.font = UIFont.systemFont(ofSize: 20)
         lbl.numberOfLines=0
         lbl.adjustsFontSizeToFitWidth = true
         lbl.translatesAutoresizingMaskIntoConstraints=false
