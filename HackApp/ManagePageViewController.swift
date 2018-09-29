@@ -40,28 +40,28 @@ struct Quiz: Codable {
     var points: String = ""
     var q1: String = ""
     var options1: String = ""
-    var a1: String = ""
+    var a1: Int = -1
     var q2: String = ""
     var options2: String = ""
-    var a2: String = ""
+    var a2: Int = -1
     var q3: String = ""
     var options3: String = ""
-    var a3: String = ""
+    var a3: Int = -1
     
     init?(document: Document) {
         self.quizName = document["quizName"] as? String ?? ""
         self.shortDescription = document["shortDescription"] as? String ?? ""
         self.points = document["points"] as? String ?? ""
         
-        self.a1 = document["a1"] as? String ?? ""
+        self.a1 = document["a1"] as? Int ?? -1
         self.options1 = document["options1"] as? String ?? ""
         self.q1 = document["q1"] as? String ?? ""
         
-        self.a2 = document["a2"] as? String ?? ""
+        self.a2 = document["a2"] as? Int ?? -1
         self.options2 = document["options2"] as? String ?? ""
         self.q2 = document["q2"] as? String ?? ""
         
-        self.a3 = document["a3"] as? String ?? ""
+        self.a3 = document["a3"] as? Int ?? -1
         self.options3 = document["options3"] as? String ?? ""
         self.q3 = document["q3"] as? String ?? ""
     }

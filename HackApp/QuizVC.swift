@@ -23,7 +23,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     var questionsArray = [Question]()
     var score: Int = 0
     var currentQuestionNumber = 1
-    
+    var quiz: Quiz?
     var window: UIWindow?
     
     override func viewDidLoad() {
@@ -49,15 +49,19 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         self.view.addSubview(myCollectionView)
         
-        let que1 = Question(imgName: "img1", questionText: "What is 2 x 2 ?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let que2 = Question(imgName: "img2", questionText: "What is 4 + 2 ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let que3 = Question(imgName: "img1", questionText: "What is 6 / 2 ?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        let que4 = Question(imgName: "img2", questionText: "What is 2 - 2 ?", options: ["2", "4", "1", "0"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let que5 = Question(imgName: "img1", questionText: "What is 12 x 2 ?", options: ["24", "40", "26", "34"], correctAns: 0, wrongAns: -1, isAnswered: false)
-        let que6 = Question(imgName: "img2", questionText: "What is the color of sky?", options: ["Violet", "Yellow", "Blue", "White"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        questionsArray = [que1, que2, que3, que4, que5, que6]
+        if let q = quiz {
+            let op1 = q.options1.components(separatedBy: ",")
+            let que1 = Question(imgName: "img1", questionText: q.q1, options: op1, correctAns: q.a1, wrongAns: -1, isAnswered: false)
+            let op2 = q.options2.components(separatedBy: ",")
+            let que2 = Question(imgName: "img2", questionText: q.q2, options: op2, correctAns: q.a2, wrongAns: -1, isAnswered: false)
+            let op3 = q.options3.components(separatedBy: ",")
+            let que3 = Question(imgName: "img1", questionText: q.q3, options: op3, correctAns: q.a3, wrongAns: -1, isAnswered: false)
+            
+            questionsArray = [que1, que2, que3]
+            
+            setupViews()
+        }
         
-        setupViews()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
