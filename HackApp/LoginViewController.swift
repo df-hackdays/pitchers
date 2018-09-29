@@ -25,14 +25,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.isHidden = true
+        self.usernameTextField.text = "abc@xyz.com"
+        self.passwordTextField.text = "123456"
     }
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destVC = segue.destination as? ManagePageViewController {
+        if let destVC = segue.destination as? SurveyTabViewController {
             destVC.photos = self.photos
             destVC.quizArray = self.quizArray
         }
     }
+    
     @IBAction func loginTapped(_ sender: UIButton) {
         guard let userText = usernameTextField.text else {
             return
@@ -51,7 +55,7 @@ class LoginViewController: UIViewController {
             // Log-in using an Anonymous authentication provider from Stitch
             // Then create a connection to a remote MongoDB instance
             // Finally pull documents from the remote instance and add them to MongoDB Mobile
-            let credential = UserPasswordCredential.init(withUsername: usernameTextField.text!, withPassword: passwordTextField.text!)
+            let credential = UserPasswordCredential.init(withUsername: userText, withPassword: passText)
             Stitch.defaultAppClient!.auth.login(withCredential: credential) { result in
                 switch result {
                 case .success:

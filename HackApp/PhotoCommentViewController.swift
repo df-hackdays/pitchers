@@ -54,6 +54,7 @@ open class PhotoCommentViewController: UIViewController {
     open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ViewController, let q = quiz {
             vc.quiz = q
+            vc.hidesBottomBarWhenPushed = true
         }
     }
     
