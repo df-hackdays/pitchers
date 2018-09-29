@@ -149,6 +149,9 @@
                                                         <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="startSurvey" id="rq8-Hv-6cn"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -199,7 +202,6 @@
                     <connections>
                         <outlet property="imageView" destination="dyw-3X-ceJ" id="G98-Ry-TZZ"/>
                         <outlet property="scrollView" destination="3Dd-cg-RgD" id="rK7-BS-ZaP"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="startSurvey" id="H7B-vb-gBK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l88-OV-YMH" userLabel="First Responder" sceneMemberID="firstResponder"/>

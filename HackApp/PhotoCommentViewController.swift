@@ -50,14 +50,6 @@ open class PhotoCommentViewController: UIViewController {
                                                selector: #selector(PhotoCommentViewController.keyboardWillHide(_:)),
                                                name: Notification.Name.UIKeyboardWillHide,
                                                object: nil)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
-        self.imageView.addGestureRecognizer(tapGesture)
-        self.imageView.isUserInteractionEnabled = true
-    }
-    
-    @objc func onTap() {
-        self.performSegue(withIdentifier: "startSurvey", sender: nil)
     }
     
     deinit {
