@@ -11,8 +11,8 @@ import StitchCore
 
 struct Question {
     let imgName: String
-    let questionText: String
-    let options: [String]
+    var questionText: String
+    var options: [String]
     let correctAns: Int
     var wrongAns: Int
     var isAnswered: Bool
@@ -73,6 +73,9 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! QuizCollectionViewCell
         cell.question=questionsArray[indexPath.row]
         cell.delegate=self
+        if let q = quiz {
+            cell.info = q.info
+        }
         return cell
     }
     
@@ -206,6 +209,10 @@ extension QuizVC: QuizCVCellDelegate {
             score += 1
         }
 //        lblScore.text = "Score: \(score) / \(questionsArray.count)"
+        let text = questionsArray[index.item].questionText
+        if let q = quiz {
+            questionsArray[index.item].questionText = text + "\n\n" + q.info
+        }
         myCollectionView.reloadItems(at: [index])
     }
     

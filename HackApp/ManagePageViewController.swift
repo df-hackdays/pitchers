@@ -48,6 +48,7 @@ struct Quiz: Codable {
     var q3: String = ""
     var options3: String = ""
     var a3: Int = -1
+    var info: String = ""
     
     init?(document: Document) {
         self.quizId = document["id"] as? Int ?? -1
@@ -66,6 +67,8 @@ struct Quiz: Codable {
         self.a3 = document["a3"] as? Int ?? -1
         self.options3 = document["options3"] as? String ?? ""
         self.q3 = document["q3"] as? String ?? ""
+        
+        self.info = document["info"] as? String ?? ""
     }
 }
 
