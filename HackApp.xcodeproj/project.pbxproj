@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20887FE6AD80CD498D1976A1 /* Pods_HackApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D28E20DA6C0C487099F78E5 /* Pods_HackApp.framework */; };
 		241CAF22215F494900BA39F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CAF21215F494900BA39F5 /* AppDelegate.swift */; };
 		241CAF24215F494900BA39F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CAF23215F494900BA39F5 /* ViewController.swift */; };
 		241CAF27215F494900BA39F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241CAF25215F494900BA39F5 /* Main.storyboard */; };
@@ -19,6 +18,14 @@
 		241CAF3A215F59A600BA39F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CAF39215F59A600BA39F5 /* LoginViewController.swift */; };
 		241CAF3D215F5D0E00BA39F5 /* PhotoCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CAF3B215F5D0E00BA39F5 /* PhotoCommentViewController.swift */; };
 		241CAF3E215F5D0E00BA39F5 /* ManagePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CAF3C215F5D0E00BA39F5 /* ManagePageViewController.swift */; };
+		3AD7EC29215FB5F30010FE34 /* MongoSwiftMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD7EC28215FB5F30010FE34 /* MongoSwiftMobile.framework */; };
+		3AD7EC2B215FB5F80010FE34 /* StitchCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD7EC2A215FB5F80010FE34 /* StitchCore.framework */; };
+		3AD7EC2D215FB5FC0010FE34 /* StitchCoreLocalMongoDBService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD7EC2C215FB5FC0010FE34 /* StitchCoreLocalMongoDBService.framework */; };
+		3AD7EC2F215FB6000010FE34 /* StitchCoreRemoteMongoDBService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD7EC2E215FB6000010FE34 /* StitchCoreRemoteMongoDBService.framework */; };
+		3AD7EC31215FB6060010FE34 /* StitchCoreSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD7EC30215FB6060010FE34 /* StitchCoreSDK.framework */; };
+		3AD7EC33215FB6060010FE34 /* StitchLocalMongoDBService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD7EC32215FB6060010FE34 /* StitchLocalMongoDBService.framework */; };
+		3AD7EC35215FB6060010FE34 /* StitchRemoteMongoDBService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD7EC34215FB6060010FE34 /* StitchRemoteMongoDBService.framework */; };
+		3AD7EC37215FB6250010FE34 /* Pods_HackApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD7EC36215FB6250010FE34 /* Pods_HackApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,14 @@
 		241CAF39215F59A600BA39F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		241CAF3B215F5D0E00BA39F5 /* PhotoCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCommentViewController.swift; sourceTree = "<group>"; };
 		241CAF3C215F5D0E00BA39F5 /* ManagePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagePageViewController.swift; sourceTree = "<group>"; };
+		3AD7EC28215FB5F30010FE34 /* MongoSwiftMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MongoSwiftMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD7EC2A215FB5F80010FE34 /* StitchCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD7EC2C215FB5FC0010FE34 /* StitchCoreLocalMongoDBService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchCoreLocalMongoDBService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD7EC2E215FB6000010FE34 /* StitchCoreRemoteMongoDBService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchCoreRemoteMongoDBService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD7EC30215FB6060010FE34 /* StitchCoreSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchCoreSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD7EC32215FB6060010FE34 /* StitchLocalMongoDBService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchLocalMongoDBService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD7EC34215FB6060010FE34 /* StitchRemoteMongoDBService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchRemoteMongoDBService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD7EC36215FB6250010FE34 /* Pods_HackApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_HackApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D28E20DA6C0C487099F78E5 /* Pods_HackApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DB831C8029D515F155F63D /* Pods-HackApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackApp/Pods-HackApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,7 +60,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20887FE6AD80CD498D1976A1 /* Pods_HackApp.framework in Frameworks */,
+				3AD7EC37215FB6250010FE34 /* Pods_HackApp.framework in Frameworks */,
+				3AD7EC31215FB6060010FE34 /* StitchCoreSDK.framework in Frameworks */,
+				3AD7EC33215FB6060010FE34 /* StitchLocalMongoDBService.framework in Frameworks */,
+				3AD7EC35215FB6060010FE34 /* StitchRemoteMongoDBService.framework in Frameworks */,
+				3AD7EC2F215FB6000010FE34 /* StitchCoreRemoteMongoDBService.framework in Frameworks */,
+				3AD7EC2D215FB5FC0010FE34 /* StitchCoreLocalMongoDBService.framework in Frameworks */,
+				3AD7EC2B215FB5F80010FE34 /* StitchCore.framework in Frameworks */,
+				3AD7EC29215FB5F30010FE34 /* MongoSwiftMobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +114,14 @@
 		5A87E5295901A975F29822BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AD7EC36215FB6250010FE34 /* Pods_HackApp.framework */,
+				3AD7EC30215FB6060010FE34 /* StitchCoreSDK.framework */,
+				3AD7EC32215FB6060010FE34 /* StitchLocalMongoDBService.framework */,
+				3AD7EC34215FB6060010FE34 /* StitchRemoteMongoDBService.framework */,
+				3AD7EC2E215FB6000010FE34 /* StitchCoreRemoteMongoDBService.framework */,
+				3AD7EC2C215FB5FC0010FE34 /* StitchCoreLocalMongoDBService.framework */,
+				3AD7EC2A215FB5F80010FE34 /* StitchCore.framework */,
+				3AD7EC28215FB5F30010FE34 /* MongoSwiftMobile.framework */,
 				3D28E20DA6C0C487099F78E5 /* Pods_HackApp.framework */,
 			);
 			name = Frameworks;
@@ -1129,7 +1159,7 @@
 				INFOPLIST_FILE = HackApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"$(SRC_ROOT)/Pods/MongoSwiftMobile",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pitchers.hackApp.HackApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1148,7 +1178,7 @@
 				INFOPLIST_FILE = HackApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"$(SRC_ROOT)/Pods/MongoSwiftMobile",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pitchers.hackApp.HackApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
