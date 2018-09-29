@@ -262,7 +262,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="XboxLive" translatesAutoresizingMaskIntoConstraints="NO" id="zQj-8k-w9b">
-                                <rect key="frame" x="200" y="471" width="161" height="103"/>
+                                <rect key="frame" x="213" y="471" width="161" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gplay" translatesAutoresizingMaskIntoConstraints="NO" id="fcw-7R-3PB">
@@ -274,7 +274,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="amazon_1" translatesAutoresizingMaskIntoConstraints="NO" id="jD0-fy-h2z">
-                                <rect key="frame" x="200" y="361" width="162" height="92"/>
+                                <rect key="frame" x="213" y="361" width="162" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

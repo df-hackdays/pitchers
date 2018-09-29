@@ -29,14 +29,6 @@ class LoginViewController: UIViewController {
         self.passwordTextField.text = "123456"
     }
     
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destVC = segue.destination as? SurveyTabViewController {
-            destVC.photos = self.photos
-            destVC.quizArray = self.quizArray
-        }
-    }
-    
     @IBAction func loginTapped(_ sender: UIButton) {
         guard let userText = usernameTextField.text else {
             return
@@ -66,7 +58,6 @@ class LoginViewController: UIViewController {
                     }
                     atlasMongoClient.db("digilearn").collection("digiquiz")
                         .find(Document()).asArray({ result in
-//                            print(result)
                             switch result {
                             case .success(let result):
                                 for eachDoc in result {
@@ -74,9 +65,7 @@ class LoginViewController: UIViewController {
                                         self.quizArray.append(quiz)
                                     }
                                 }
-                                
-                                print(self.quizArray)
-                                
+                                                                
                                 for (index, _) in self.quizArray.enumerated() {
                                     self.photos.append("photo\(index + 1)")
                                 }
@@ -86,6 +75,7 @@ class LoginViewController: UIViewController {
                                         self.performSegue(withIdentifier: "showSurveys", sender: nil)
                                     }
                                     
+                                    QuizData.saveQuizData(quizes: self.quizArray, photos: self.photos)
                                 }
                             case .failure(let error):
                                 print("failed to find documents: \(error)")

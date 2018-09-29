@@ -51,6 +51,10 @@ class ResultVC: UIViewController {
     
     @objc func btnRestartAction() {
         if let vcs = navigationController?.viewControllers, vcs.count > 0 {
+            let arr = QuizData.quizArray.filter({ $0.quizId != quiz!.quizId})
+            var photoArr = QuizData.photoArray
+            photoArr.remove(at: 0)
+            QuizData.saveQuizData(quizes: arr, photos: photoArr)
             self.navigationController?.popToRootViewController(animated: true)
         }
     }

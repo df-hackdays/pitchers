@@ -52,7 +52,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         if let q = quiz {
             let op1 = q.options1.components(separatedBy: ",")
-            let que1 = Question(imgName: "img1", questionText: q.q1, options: op1, correctAns: q.a1, wrongAns: -1, isAnswered: false)
+            let que1 = Question(imgName: "cyberBully", questionText: q.q1, options: op1, correctAns: q.a1, wrongAns: -1, isAnswered: false)
             let op2 = q.options2.components(separatedBy: ",")
             let que2 = Question(imgName: "img2", questionText: q.q2, options: op2, correctAns: q.a2, wrongAns: -1, isAnswered: false)
             let op3 = q.options3.components(separatedBy: ",")
