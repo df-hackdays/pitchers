@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
             // Log-in using an Anonymous authentication provider from Stitch
             // Then create a connection to a remote MongoDB instance
             // Finally pull documents from the remote instance and add them to MongoDB Mobile
-            let credential = UserPasswordCredential.init(withUsername: usernameTextField.text!, withPassword: passwordTextField.text!)
+            let credential = UserPasswordCredential.init(withUsername: userText, withPassword: passText)
             Stitch.defaultAppClient!.auth.login(withCredential: credential) { result in
                 switch result {
                 case .success:
