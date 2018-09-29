@@ -16,6 +16,8 @@
 		241CAF36215F49D700BA39F5 /* QuizCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CAF35215F49D700BA39F5 /* QuizCollectionViewCell.swift */; };
 		241CAF38215F4A0200BA39F5 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CAF37215F4A0200BA39F5 /* ResultVC.swift */; };
 		241CAF3A215F59A600BA39F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CAF39215F59A600BA39F5 /* LoginViewController.swift */; };
+		241CAF3D215F5D0E00BA39F5 /* PhotoCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CAF3B215F5D0E00BA39F5 /* PhotoCommentViewController.swift */; };
+		241CAF3E215F5D0E00BA39F5 /* ManagePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CAF3C215F5D0E00BA39F5 /* ManagePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		241CAF35215F49D700BA39F5 /* QuizCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCollectionViewCell.swift; sourceTree = "<group>"; };
 		241CAF37215F4A0200BA39F5 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		241CAF39215F59A600BA39F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		241CAF3B215F5D0E00BA39F5 /* PhotoCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCommentViewController.swift; sourceTree = "<group>"; };
+		241CAF3C215F5D0E00BA39F5 /* ManagePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				241CAF35215F49D700BA39F5 /* QuizCollectionViewCell.swift */,
 				241CAF25215F494900BA39F5 /* Main.storyboard */,
 				241CAF39215F59A600BA39F5 /* LoginViewController.swift */,
+				241CAF3C215F5D0E00BA39F5 /* ManagePageViewController.swift */,
+				241CAF3B215F5D0E00BA39F5 /* PhotoCommentViewController.swift */,
 				241CAF28215F494C00BA39F5 /* Assets.xcassets */,
 				241CAF2A215F494C00BA39F5 /* LaunchScreen.storyboard */,
 				241CAF2D215F494C00BA39F5 /* Info.plist */,
@@ -152,6 +158,8 @@
 				241CAF24215F494900BA39F5 /* ViewController.swift in Sources */,
 				241CAF34215F49A200BA39F5 /* QuizVC.swift in Sources */,
 				241CAF22215F494900BA39F5 /* AppDelegate.swift in Sources */,
+				241CAF3D215F5D0E00BA39F5 /* PhotoCommentViewController.swift in Sources */,
+				241CAF3E215F5D0E00BA39F5 /* ManagePageViewController.swift in Sources */,
 				241CAF36215F49D700BA39F5 /* QuizCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

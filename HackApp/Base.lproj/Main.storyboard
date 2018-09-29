@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1927.2" y="-116.49175412293854"/>
+            <point key="canvasLocation" x="2722" y="682"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="kh8-P9-upX">
@@ -38,7 +38,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showGetStarted" id="rcq-oF-Zm5"/>
+                                    <segue destination="6Ft-RY-UDX" kind="show" identifier="showSurveys" id="FAQ-TP-ZDe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,5 +69,132 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="-43.628185907046479"/>
         </scene>
+        <!--Photo Comment View Controller-->
+        <scene sceneID="GOC-bF-ZDY">
+            <objects>
+                <viewController storyboardIdentifier="PhotoCommentViewController" automaticallyAdjustsScrollViewInsets="NO" id="ZP6-0h-qkm" customClass="PhotoCommentViewController" customModule="HackApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Va7-rf-oI4"/>
+                        <viewControllerLayoutGuide type="bottom" id="YHq-ox-UuH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jnU-Ic-jQq">
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Dd-cg-RgD">
+                                <rect key="frame" x="0.0" y="20" width="340" height="780"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhL-JV-Slf" userLabel="Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="657"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="dyw-3X-ceJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="340" height="500"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="500" id="yVI-1p-sXa"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="1FT-La-bTY" appends="YES" id="n0M-Ke-Wa5"/>
+                                                </connections>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What name fits me best?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgw-QK-xgg">
+                                                <rect key="frame" x="75" y="520" width="190" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CW-rg-YOI">
+                                                <rect key="frame" x="186" y="561" width="134" height="51"/>
+                                                <color key="backgroundColor" red="1" green="0.082429040499640061" blue="0.063139713714202794" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="4B8-IE-mTj"/>
+                                                    <constraint firstAttribute="width" constant="134" id="XQL-iM-OrF"/>
+                                                </constraints>
+                                                <state key="normal" title="Start Survey">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="mgw-QK-xgg" firstAttribute="top" secondItem="dyw-3X-ceJ" secondAttribute="bottom" constant="20" id="06E-T0-zUy"/>
+                                            <constraint firstAttribute="trailing" secondItem="8CW-rg-YOI" secondAttribute="trailing" constant="20" id="1e8-da-Uxe"/>
+                                            <constraint firstAttribute="trailing" secondItem="dyw-3X-ceJ" secondAttribute="trailing" id="AM2-Ub-n64"/>
+                                            <constraint firstAttribute="trailing" secondItem="mgw-QK-xgg" secondAttribute="trailing" id="EYb-hw-CTz"/>
+                                            <constraint firstItem="mgw-QK-xgg" firstAttribute="centerX" secondItem="yhL-JV-Slf" secondAttribute="centerX" id="Sre-Ky-1Tf"/>
+                                            <constraint firstItem="dyw-3X-ceJ" firstAttribute="leading" secondItem="yhL-JV-Slf" secondAttribute="leading" id="VgN-E9-08c"/>
+                                            <constraint firstItem="mgw-QK-xgg" firstAttribute="leading" secondItem="yhL-JV-Slf" secondAttribute="leading" id="XUz-jR-Npw"/>
+                                            <constraint firstAttribute="height" constant="657" id="bD8-yI-JbW"/>
+                                            <constraint firstItem="dyw-3X-ceJ" firstAttribute="top" secondItem="yhL-JV-Slf" secondAttribute="top" id="myK-Ok-9BS"/>
+                                            <constraint firstItem="8CW-rg-YOI" firstAttribute="top" secondItem="mgw-QK-xgg" secondAttribute="bottom" constant="20.5" id="sY7-N3-6Ti"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="EYb-hw-CTz"/>
+                                                <exclude reference="XUz-jR-Npw"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yhL-JV-Slf" firstAttribute="leading" secondItem="3Dd-cg-RgD" secondAttribute="leading" id="16i-nf-hkC"/>
+                                    <constraint firstAttribute="trailing" secondItem="yhL-JV-Slf" secondAttribute="trailing" id="IHg-Ke-Rpl"/>
+                                    <constraint firstItem="yhL-JV-Slf" firstAttribute="top" secondItem="3Dd-cg-RgD" secondAttribute="top" id="bcn-mV-Fw4"/>
+                                    <constraint firstAttribute="bottom" secondItem="yhL-JV-Slf" secondAttribute="bottom" constant="123" id="lRN-og-PZ0"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="YHq-ox-UuH" firstAttribute="top" secondItem="3Dd-cg-RgD" secondAttribute="bottom" id="6DN-vT-Ryu"/>
+                            <constraint firstItem="yhL-JV-Slf" firstAttribute="width" secondItem="jnU-Ic-jQq" secondAttribute="width" id="Rbg-9h-myA"/>
+                            <constraint firstItem="3Dd-cg-RgD" firstAttribute="leading" secondItem="jnU-Ic-jQq" secondAttribute="leading" id="X87-ih-DEB"/>
+                            <constraint firstAttribute="trailing" secondItem="3Dd-cg-RgD" secondAttribute="trailing" id="nmX-26-g07"/>
+                            <constraint firstItem="3Dd-cg-RgD" firstAttribute="top" secondItem="Va7-rf-oI4" secondAttribute="bottom" id="tR8-i0-Ycl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uOb-OD-QPu"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Atq-xY-8BQ" appends="YES" id="dXf-iE-D5S"/>
+                        </connections>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="340" height="800"/>
+                    <connections>
+                        <outlet property="imageView" destination="dyw-3X-ceJ" id="G98-Ry-TZZ"/>
+                        <outlet property="scrollView" destination="3Dd-cg-RgD" id="rK7-BS-ZaP"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="startSurvey" id="H7B-vb-gBK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l88-OV-YMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Atq-xY-8BQ">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="ZP6-0h-qkm" id="30X-0D-FHJ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1FT-La-bTY">
+                    <connections>
+                        <action selector="openZoomingController:" destination="ZP6-0h-qkm" id="fse-Yw-gLD"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1924.8" y="742.12893553223398"/>
+        </scene>
+        <!--Manage Page View Controller-->
+        <scene sceneID="5a7-fL-kQJ">
+            <objects>
+                <pageViewController storyboardIdentifier="ManagePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="8" navigationOrientation="horizontal" spineLocation="none" id="6Ft-RY-UDX" customClass="ManagePageViewController" customModule="HackApp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sQg-JI-WPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2698" y="-44"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="photo1" width="1024" height="768"/>
+    </resources>
 </document>
