@@ -459,7 +459,7 @@
                                                     <constraint firstAttribute="height" constant="51" id="4B8-IE-mTj"/>
                                                     <constraint firstAttribute="width" constant="134" id="XQL-iM-OrF"/>
                                                 </constraints>
-                                                <state key="normal" title="Learn More">
+                                                <state key="normal" title="Earn 50 points">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -558,7 +558,7 @@
         <image name="home" width="30" height="30"/>
         <image name="invite-new" width="614" height="904"/>
         <image name="logo" width="512" height="512"/>
-        <image name="photo1" width="1024" height="768"/>
+        <image name="photo1" width="900" height="600"/>
         <image name="scene-header" width="864" height="304"/>
         <image name="trophy" width="30" height="30"/>
         <image name="user_male" width="30" height="30"/>
