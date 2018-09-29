@@ -49,7 +49,8 @@ class RegisterVC: UIViewController {
             let client = try Stitch.initializeDefaultAppClient(
                 withClientAppID: "digiknow-mcfek"
             )
-            Stitch.defaultAppClient!.auth.login(withCredential: AnonymousCredential.init()) { result in
+            let credential = UserPasswordCredential.init(withUsername: "abc@xyz.com", withPassword: "123456")
+            Stitch.defaultAppClient!.auth.login(withCredential: credential) { result in
                 switch result {
                 case .success:
                     client.callFunction(withName: "adduserinfo", withArgs: [firstNameText, lastNameText, emailAddressText, passwordText]) { result in

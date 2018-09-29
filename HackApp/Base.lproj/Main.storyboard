@@ -179,14 +179,26 @@
                     <view key="view" contentMode="scaleToFill" id="CkP-cX-Y5l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Invite your friends and earn points for every friend that joins" translatesAutoresizingMaskIntoConstraints="NO" id="6ci-il-TrY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="82"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.70196078429999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6ci-il-TrY" firstAttribute="centerX" secondItem="CkP-cX-Y5l" secondAttribute="centerX" id="jCa-n5-CTj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ctg-Gl-lII"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Friends" id="23z-7G-KZo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kN-dg-TiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-906" y="1873"/>
+            <point key="canvasLocation" x="-906.39999999999998" y="1872.4137931034484"/>
         </scene>
         <!--Account-->
         <scene sceneID="1Je-2c-TZN">
