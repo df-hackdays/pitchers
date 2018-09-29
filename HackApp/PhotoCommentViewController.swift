@@ -36,6 +36,7 @@ open class PhotoCommentViewController: UIViewController {
     open var photoName: String?
     open var photoIndex: Int!
     open var quizName: String?
+    open var shortDesc: String = ""
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,16 @@ open class PhotoCommentViewController: UIViewController {
         }
         if let quizName = quizName {
             self.nameLabel.text = quizName
+        }
+    }
+    
+    @IBAction func startSurvey(_ sender: UIButton) {
+        performSegue(withIdentifier: "startSurvey", sender: nil)
+    }
+    
+    open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ViewController {
+            vc.desc = self.shortDesc
         }
     }
     

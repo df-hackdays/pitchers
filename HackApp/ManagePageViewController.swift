@@ -156,11 +156,12 @@ class ManagePageViewController: UIPageViewController {
       page.photoName = photos[index]
       page.photoIndex = index
         page.quizName = self.quizArray[index].quizName
+        page.shortDesc = self.quizArray[index].shortDescription
       return page
     }
     return nil
   }
-}
+} 
 
 //MARK: implementation of UIPageViewControllerDataSource
 extension ManagePageViewController: UIPageViewControllerDataSource {

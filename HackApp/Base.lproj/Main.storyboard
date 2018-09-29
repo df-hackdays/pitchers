@@ -160,7 +160,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="startSurvey" id="rq8-Hv-6cn"/>
+                                                    <action selector="startSurvey:" destination="ZP6-0h-qkm" eventType="touchUpInside" id="SjD-03-paJ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -211,6 +211,7 @@
                         <outlet property="imageView" destination="dyw-3X-ceJ" id="G98-Ry-TZZ"/>
                         <outlet property="nameLabel" destination="mgw-QK-xgg" id="xvP-Xe-YcC"/>
                         <outlet property="scrollView" destination="3Dd-cg-RgD" id="rK7-BS-ZaP"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="startSurvey" id="x0j-Cz-JER"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l88-OV-YMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
