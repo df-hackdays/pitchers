@@ -25,14 +25,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.isHidden = true
+        self.usernameTextField.text = "abc@xyz.com"
+        self.passwordTextField.text = "123456"
     }
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destVC = segue.destination as? ManagePageViewController {
+        if let destVC = segue.destination as? SurveyTabViewController {
             destVC.photos = self.photos
             destVC.quizArray = self.quizArray
         }
     }
+    
     @IBAction func loginTapped(_ sender: UIButton) {
         guard let userText = usernameTextField.text else {
             return

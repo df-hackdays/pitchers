@@ -80,6 +80,7 @@ class ManagePageViewController: UIPageViewController {
     
     dataSource = self
     self.navigationItem.setHidesBackButton(true, animated: false)
+    self.navigationController?.navigationItem.setHidesBackButton(true, animated: true)
     self.title = "CodeTrek"
     
     goToNextStep()
@@ -87,6 +88,9 @@ class ManagePageViewController: UIPageViewController {
   }
   
     func goToNextStep() {
+        
+        self.quizArray = QuizData.quizArray
+        self.photos = QuizData.photoArray
         
         DispatchQueue.main.async {
             // 1
