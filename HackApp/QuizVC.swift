@@ -94,6 +94,9 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             let v=ResultVC()
             v.score = score
             v.totalScore = questionsArray.count
+            if let q = quiz {
+                v.points = q.points
+            }
             self.navigationController?.pushViewController(v, animated: false)
             return
         }
@@ -146,7 +149,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         lblScore.widthAnchor.constraint(equalTo: lblQueNumber.widthAnchor).isActive=true
         lblScore.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive=true
         lblScore.bottomAnchor.constraint(equalTo: lblQueNumber.bottomAnchor).isActive=true
-        lblScore.text = "Score: \(score) / \(questionsArray.count)"
+//        lblScore.text = "Score: \(score) / \(questionsArray.count)"
     }
     
     let btnPrev: UIButton = {
@@ -181,7 +184,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     let lblScore: UILabel = {
         let lbl=UILabel()
-        lbl.text="0 / 0"
+//        lbl.text="0 / 0"
         lbl.textColor=UIColor.gray
         lbl.textAlignment = .right
         lbl.font = UIFont.systemFont(ofSize: 16)
@@ -201,7 +204,7 @@ extension QuizVC: QuizCVCellDelegate {
         } else {
             score += 1
         }
-        lblScore.text = "Score: \(score) / \(questionsArray.count)"
+//        lblScore.text = "Score: \(score) / \(questionsArray.count)"
         myCollectionView.reloadItems(at: [index])
     }
     

@@ -7,17 +7,33 @@
 //
 
 import UIKit
+import StitchCore
 
 class ResultVC: UIViewController {
     
     var score: Int?
     var totalScore: Int?
+    var points: String = ""
+    var quizId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        
+        view.backgroundColor = UIColor.white
         setupViews()
+        
+        do {
+            let client = try Stitch.initializeDefaultAppClient(
+                withClientAppID: "digiknow-mcfek"
+            )
+            
+            client.callFunction(withName: "increment", withArgs: ["", points]) { result in
+                /* ... */
+            }
+        } catch _ {
+            
+        }
+        
     }
     
     func showRating() {
@@ -41,46 +57,51 @@ class ResultVC: UIViewController {
             rating = "Outstanding"
             color = UIColor.orange
         }
-        lblRating.text = "\(rating)"
+//        lblRating.text = "\(rating)"
         lblRating.textColor=color
     }
     
     @objc func btnRestartAction() {
-        self.navigationController?.popToRootViewController(animated: true)
+//        self.navigationController?.popToRootViewController(animated: true)
+        if let vcs = navigationController?.viewControllers, vcs.count > 1 {
+            self.navigationController?.popToViewController(vcs[1], animated: true)
+        }
     }
     
     func setupViews() {
         self.view.addSubview(lblTitle)
         lblTitle.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 80).isActive=true
         lblTitle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        lblTitle.widthAnchor.constraint(equalToConstant: 250).isActive=true
-        lblTitle.heightAnchor.constraint(equalToConstant: 80).isActive=true
+        lblTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        lblTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         
         self.view.addSubview(lblScore)
         lblScore.topAnchor.constraint(equalTo: lblTitle.bottomAnchor, constant: 0).isActive=true
         lblScore.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        lblScore.widthAnchor.constraint(equalToConstant: 150).isActive=true
-        lblScore.heightAnchor.constraint(equalToConstant: 60).isActive=true
-        lblScore.text = "\(score!) / \(totalScore!)"
+        lblScore.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        lblScore.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+//        lblScore.text = "\(score!) / \(totalScore!)"
         
         self.view.addSubview(lblRating)
         lblRating.topAnchor.constraint(equalTo: lblScore.bottomAnchor, constant: 40).isActive=true
         lblRating.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        lblRating.widthAnchor.constraint(equalToConstant: 150).isActive=true
-        lblRating.heightAnchor.constraint(equalToConstant: 60).isActive=true
+        lblRating.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        lblRating.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         showRating()
         
         self.view.addSubview(btnRestart)
-        btnRestart.topAnchor.constraint(equalTo: lblRating.bottomAnchor, constant: 40).isActive=true
-        btnRestart.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
+        btnRestart.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive=true
+        btnRestart.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         btnRestart.widthAnchor.constraint(equalToConstant: 150).isActive=true
         btnRestart.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnRestart.addTarget(self, action: #selector(btnRestartAction), for: .touchUpInside)
+        
+        lblRating.text="You won \(points) points"
     }
     
     let lblTitle: UILabel = {
         let lbl=UILabel()
-        lbl.text="Your Score"
+//        lbl.text="Your Score"
         lbl.textColor=UIColor.darkGray
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 46)
@@ -91,7 +112,7 @@ class ResultVC: UIViewController {
     
     let lblScore: UILabel = {
         let lbl=UILabel()
-        lbl.text="0 / 0"
+        lbl.text="CONGRATULATIONS"
         lbl.textColor=UIColor.black
         lbl.textAlignment = .center
         lbl.font = UIFont.boldSystemFont(ofSize: 24)
@@ -101,11 +122,12 @@ class ResultVC: UIViewController {
     
     let lblRating: UILabel = {
         let lbl=UILabel()
-        lbl.text="Good"
+        
         lbl.textColor=UIColor.black
         lbl.textAlignment = .center
         lbl.font = UIFont.boldSystemFont(ofSize: 24)
         lbl.translatesAutoresizingMaskIntoConstraints=false
+        
         return lbl
     }()
     
