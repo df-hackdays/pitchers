@@ -38,7 +38,8 @@ class ManagePageViewController: UIPageViewController {
     super.viewDidLoad()
     
     dataSource = self
-    
+    self.navigationItem.setHidesBackButton(true, animated: false)
+    self.title = "CodeTrek"
     // 1
     if let viewController = viewPhotoCommentController(currentIndex ?? 0) {
       let viewControllers = [viewController]
