@@ -27,9 +27,6 @@ OnClickLogin = ()=>{
 render(){
   return (
     <div className="login-page-class">
-  
-
-
       <Paper className="loginPaper">
           <div className="loginheaderpart">
                <Typography variant="display3" gutterBottom className="loginpageheader">
@@ -48,16 +45,11 @@ render(){
          
         </div>
         <div className="loginformgroup">
-
-
-          
             <Key />
-          
             <TextField type="password" id="input-password" label="Password" />
          
         </div>
         </form>
-
         <Button  variant="raised" color="primary" onClick={this.OnClickLogin}><Typography variant="button" gutterBottom className="logintypography">
         Login
       </Typography></Button>
