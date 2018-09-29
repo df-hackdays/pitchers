@@ -10,15 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var window: UIWindow?
-    var desc: String = ""
+    var window: UIWindow?    
+    var quiz: Quiz?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor=UIColor.white
         
         setupViews()
-        lblTitle.text = desc
+        if let q = quiz {
+            lblTitle.text = q.shortDescription
+        }
     }
     
     @objc func btnGetStartedAction() {
