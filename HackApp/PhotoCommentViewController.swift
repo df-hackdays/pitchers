@@ -35,15 +35,25 @@ open class PhotoCommentViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     open var photoName: String?
     open var photoIndex: Int!
-    open var quizName: String?
+    var quiz: Quiz?
     
     override open func viewDidLoad() {
         super.viewDidLoad()
         if let photoName = photoName {
             self.imageView.image = UIImage(named: photoName)
         }
-        if let quizName = quizName {
-            self.nameLabel.text = quizName
+        if let q = quiz {
+            self.nameLabel.text = q.quizName
+        }
+    }
+    
+    @IBAction func startSurvey(_ sender: UIButton) {
+        performSegue(withIdentifier: "startSurvey", sender: nil)
+    }
+    
+    open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ViewController, let q = quiz {
+            vc.quiz = q
         }
     }
     

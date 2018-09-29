@@ -36,6 +36,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginTapped(_ sender: UIButton) {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
+        
         // Get a previously defined client
         do {
             let client = try Stitch.initializeDefaultAppClient(
@@ -48,16 +49,14 @@ class LoginViewController: UIViewController {
                 switch result {
                 case .success:
                     let atlasMongoClient = client.serviceClient(fromFactory: remoteMongoClientFactory, withName: "mongodb-atlas")
-                    
-                    // let queryDoc = Document()
+//                    atlasMongoClient.db("digilearn").collection("digiquiz").deleteOne( { quizName: "Web"})
                     
                     atlasMongoClient.db("digilearn").collection("digiquiz")
                         .find(Document()).asArray({ result in
                             switch result {
                             case .success(let result):
-                                
+//                                print(result)
                                 for eachDoc in result {
-                                    //                            var quiz = Quiz(document: eachDoc)
                                     if let quiz = Quiz(document: eachDoc) {
                                         self.quizArray.append(quiz)
                                     }
