@@ -34,6 +34,12 @@ class LoginViewController: UIViewController {
         }
     }
     @IBAction func loginTapped(_ sender: UIButton) {
+        guard let userText = usernameTextField.text else {
+            return
+        }
+        guard let passText = passwordTextField.text else {
+            return
+        }
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         
@@ -49,32 +55,18 @@ class LoginViewController: UIViewController {
                 switch result {
                 case .success:
                     let atlasMongoClient = client.serviceClient(fromFactory: remoteMongoClientFactory, withName: "mongodb-atlas")
-//                    atlasMongoClient.db("digilearn").collection("digiquiz").deleteOne( { quizName: "Web"})
-                    
+                
+                    client.callFunction(withName: "increment", withArgs: [userText, passText]) { result in
+                        /* ... */
+                    }
                     atlasMongoClient.db("digilearn").collection("digiquiz")
                         .find(Document()).asArray({ result in
                             switch result {
                             case .success(let result):
-//                                print(result)
                                 for eachDoc in result {
                                     if let quiz = Quiz(document: eachDoc) {
                                         self.quizArray.append(quiz)
                                     }
-                                    
-                                    //                            if let type = eachDoc["questions"] {
-                                    //                                let x = Document(arrayLiteral: type)
-                                    //                                if let q = Question1(document: x) {
-                                    //                                    question1 = q
-                                    //                                    quiz?.questions.append(question1)
-                                    //                                }
-                                    //                            }
-                                    //                            if let quizName = eachDoc["quizName"] as? String {
-                                    //                                quiz.quizName = quizName
-                                    //                            }
-                                    
-                                    //                            if let shortDescription = eachDoc["shortDescription"] as? String {
-                                    //                                quiz.shortDescription = shortDescription
-                                    //                            }
                                 }
                                 
                                 print(self.quizArray)
