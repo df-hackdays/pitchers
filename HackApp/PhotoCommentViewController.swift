@@ -41,36 +41,10 @@ open class PhotoCommentViewController: UIViewController {
         if let photoName = photoName {
             self.imageView.image = UIImage(named: photoName)
         }
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(PhotoCommentViewController.keyboardWillShow(_:)),
-                                               name: Notification.Name.UIKeyboardWillShow,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(PhotoCommentViewController.keyboardWillHide(_:)),
-                                               name: Notification.Name.UIKeyboardWillHide,
-                                               object: nil)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
-    func adjustInsetForKeyboardShow(_ show: Bool, notification: Notification) {
-        let userInfo = notification.userInfo ?? [:]
-        let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        let adjustmentHeight = (keyboardFrame.height + 20) * (show ? 1 : -1)
-        scrollView.contentInset.bottom += adjustmentHeight
-        scrollView.scrollIndicatorInsets.bottom += adjustmentHeight
-    }
-    
-    @objc func keyboardWillShow(_ notification: Notification) {
-        adjustInsetForKeyboardShow(true, notification: notification)
-    }
-    
-    @objc func keyboardWillHide(_ notification: Notification) {
-        adjustInsetForKeyboardShow(false, notification: notification)
-    }
-    
 }
 
