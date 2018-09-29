@@ -22,7 +22,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
 
-export class QuizzesPage extends React.Component {
+export class AddQuizzesPage extends React.Component {
 
   state = {
     messageopen: false,
@@ -52,8 +52,9 @@ export class QuizzesPage extends React.Component {
 
 
     return (
-      <div className="contact-page-wrapper">
 
+      <div className="contact-page-wrapper">
+        {console.log("AT THE ADD QUIZZES PAGE")}
 
         <Snackbar
           key={key}
@@ -308,4 +309,4 @@ export class QuizzesPage extends React.Component {
 
 
 
-export default QuizzesPage;
+export default AddQuizzesPage;

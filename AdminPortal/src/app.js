@@ -10,13 +10,10 @@ import configureStore from './store/config/configureStore';
 import { Stitch, AnonymousCredential } from 'mongodb-stitch-browser-sdk'
 import { login, logout } from './store/actions/auth';
 
-
 const store = configureStore();
 store.subscribe(() => {
   console.log(store.getState());
 });
-
-
 
 const App = () => (
   <Provider store={store}>
@@ -25,17 +22,6 @@ const App = () => (
     </MuiThemeProvider>
   </Provider>
 );
-
-
-function initializeAndLogin() {
-  const client = Stitch.initializeDefaultAppClient('digiknow-mcfek');
-  client.auth.loginWithCredential(new AnonymousCredential()).then(user => {
-    console.log(`Logged in as anonymous user with id ${user.id}`);
-  });
-}
-
-window.onload = initializeAndLogin;
-
 
 store.dispatch(logout());
 

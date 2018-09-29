@@ -22,6 +22,7 @@
     "file-loader": "^1.1.11",
     "fusioncharts": "^3.12.2",
     "material-ui-image": "^3.0.0",
+    "mongodb-stitch": "^3.2.5",
     "mongodb-stitch-browser-sdk": "^4.0.13",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
