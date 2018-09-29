@@ -46,14 +46,12 @@ class ResultVC: UIViewController {
             rating = "Outstanding"
             color = UIColor.orange
         }
-//        lblRating.text = "\(rating)"
         lblRating.textColor=color
     }
     
     @objc func btnRestartAction() {
-//        self.navigationController?.popToRootViewController(animated: true)
-        if let vcs = navigationController?.viewControllers, vcs.count > 1 {
-            self.navigationController?.popToViewController(vcs[1], animated: true)
+        if let vcs = navigationController?.viewControllers, vcs.count > 0 {
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
     

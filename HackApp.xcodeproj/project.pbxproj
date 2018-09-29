@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2409F36B215FDF4F00B007C0 /* SurveyTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2409F36A215FDF4F00B007C0 /* SurveyTabViewController.swift */; };
+		2409F36D215FE37D00B007C0 /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2409F36C215FE37D00B007C0 /* QuizData.swift */; };
 		241CAF22215F494900BA39F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CAF21215F494900BA39F5 /* AppDelegate.swift */; };
 		241CAF24215F494900BA39F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241CAF23215F494900BA39F5 /* ViewController.swift */; };
 		241CAF27215F494900BA39F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241CAF25215F494900BA39F5 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		05086C7CF8397FF4A28A59AC /* Pods-HackApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackApp/Pods-HackApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2409F36A215FDF4F00B007C0 /* SurveyTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTabViewController.swift; sourceTree = "<group>"; };
+		2409F36C215FE37D00B007C0 /* QuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizData.swift; sourceTree = "<group>"; };
 		241CAF1E215F494900BA39F5 /* HackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		241CAF21215F494900BA39F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		241CAF23215F494900BA39F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +108,9 @@
 				241CAF35215F49D700BA39F5 /* QuizCollectionViewCell.swift */,
 				241CAF25215F494900BA39F5 /* Main.storyboard */,
 				241CAF39215F59A600BA39F5 /* LoginViewController.swift */,
+				2409F36A215FDF4F00B007C0 /* SurveyTabViewController.swift */,
 				241CAF3C215F5D0E00BA39F5 /* ManagePageViewController.swift */,
+				2409F36C215FE37D00B007C0 /* QuizData.swift */,
 				241CAF3B215F5D0E00BA39F5 /* PhotoCommentViewController.swift */,
 				241CAF28215F494C00BA39F5 /* Assets.xcassets */,
 				241CAF2A215F494C00BA39F5 /* LaunchScreen.storyboard */,
@@ -1009,8 +1015,10 @@
 				241CAF38215F4A0200BA39F5 /* ResultVC.swift in Sources */,
 				241CAF24215F494900BA39F5 /* ViewController.swift in Sources */,
 				241CAF34215F49A200BA39F5 /* QuizVC.swift in Sources */,
+				2409F36B215FDF4F00B007C0 /* SurveyTabViewController.swift in Sources */,
 				241CAF22215F494900BA39F5 /* AppDelegate.swift in Sources */,
 				241CAF3D215F5D0E00BA39F5 /* PhotoCommentViewController.swift in Sources */,
+				2409F36D215FE37D00B007C0 /* QuizData.swift in Sources */,
 				AE8C0F8F215FD3B100158ED8 /* RegisterVC.swift in Sources */,
 				241CAF3E215F5D0E00BA39F5 /* ManagePageViewController.swift in Sources */,
 				241CAF36215F49D700BA39F5 /* QuizCollectionViewCell.swift in Sources */,
