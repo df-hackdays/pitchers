@@ -29,33 +29,133 @@
  */
 
 import UIKit
+import StitchCore
+import StitchLocalMongoDBService
+import StitchRemoteMongoDBService
+import MongoSwiftMobile // required for BSON Documents
+
+struct Quiz: Codable {
+    var quizName: String = ""
+    var shortDescription: String = ""
+    var points: String = ""
+    var questions: [Question1] = []
+    
+    init?(document: Document) {
+        self.quizName = document["quizName"] as? String ?? ""
+        self.shortDescription = document["shortDescription"] as? String ?? ""
+        self.points = document["points"] as? String ?? ""
+        self.questions = document["questions"] as? [Question1] ?? []
+    }
+}
+
+struct Question1: Codable {
+    var question: String = ""
+    var options: [String] = []
+    var correctAnswer: String = ""
+    var info: String = ""
+
+}
 
 class ManagePageViewController: UIPageViewController {
-  var photos = ["photo1", "photo2", "photo3", "photo4", "photo5"]
+    var photos: [String] = []
+    var photoName: [String] = []
   var currentIndex: Int!
-  
+  var quizArray: [Quiz] = []
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Get a previously defined client
+//    do {
+//        let client = try Stitch.initializeDefaultAppClient(
+//            withClientAppID: "digiknow-mcfek"
+//        )
+//        // Log-in using an Anonymous authentication provider from Stitch
+//        // Then create a connection to a remote MongoDB instance
+//        // Finally pull documents from the remote instance and add them to MongoDB Mobile
+//        client.auth.login(withCredential: AnonymousCredential()) { result in
+//            switch result {
+//            case .success:
+//                let atlasMongoClient = client.serviceClient(fromFactory: remoteMongoClientFactory, withName: "mongodb-atlas")
+//
+//                // let queryDoc = Document()
+//
+//                atlasMongoClient.db("digilearn").collection("digiquiz")
+//                    .find(Document()).asArray({ result in
+//                    switch result {
+//                    case .success(let result):
+//
+//                        for eachDoc in result {
+////                            var quiz = Quiz(document: eachDoc)
+//                            if let quiz = Quiz(document: eachDoc) {
+//                                self.quizArray.append(quiz)
+//                            }
+//
+////                            if let type = eachDoc["questions"] {
+////                                let x = Document(arrayLiteral: type)
+////                                if let q = Question1(document: x) {
+////                                    question1 = q
+////                                    quiz?.questions.append(question1)
+////                                }
+////                            }
+////                            if let quizName = eachDoc["quizName"] as? String {
+////                                quiz.quizName = quizName
+////                            }
+//
+////                            if let shortDescription = eachDoc["shortDescription"] as? String {
+////                                quiz.shortDescription = shortDescription
+////                            }
+//                        }
+//
+//                        print(self.quizArray)
+//
+//                        for (index, _) in self.quizArray.enumerated() {
+//                            self.photos.append("photo\(index + 1)")
+//                        }
+//                        if self.photos.count > 0 {
+//                            self.goToNextStep()
+//                        }
+//                    case .failure(let error):
+//                        print("failed to find documents: \(error)")
+//                    }
+//                    })
+//            case .failure(let error):
+//                print("failed to login: \(error)")
+//            }
+//        }
+//    } catch _ {
+//        print("error")
+//    }
+
     dataSource = self
     self.navigationItem.setHidesBackButton(true, animated: false)
     self.title = "CodeTrek"
-    // 1
-    if let viewController = viewPhotoCommentController(currentIndex ?? 0) {
-      let viewControllers = [viewController]
-      // 2
-      setViewControllers(viewControllers,
-                         direction: .forward,
-                         animated: false,
-                         completion: nil)
-    }
+    
+    goToNextStep()
+    
   }
   
+    func goToNextStep() {
+        
+        DispatchQueue.main.async {
+            // 1
+            if let viewController = self.viewPhotoCommentController(self.currentIndex ?? 0) {
+                let viewControllers = [viewController]
+                // 2
+                self.setViewControllers(viewControllers,
+                                   direction: .forward,
+                                   animated: false,
+                                   completion: nil)
+            }
+        }
+    }
+    
   func viewPhotoCommentController(_ index: Int) -> PhotoCommentViewController? {
     if let storyboard = storyboard,
       let page = storyboard.instantiateViewController(withIdentifier: "PhotoCommentViewController") as? PhotoCommentViewController {
       page.photoName = photos[index]
       page.photoIndex = index
+        page.quizName = self.quizArray[index].quizName
       return page
     }
     return nil

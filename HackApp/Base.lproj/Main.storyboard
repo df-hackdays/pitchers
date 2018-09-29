@@ -56,16 +56,21 @@
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="6Ft-RY-UDX" kind="show" identifier="showSurveys" id="FAQ-TP-ZDe"/>
+                                    <action selector="loginTapped:" destination="EMe-Pl-PXD" eventType="touchUpInside" id="2Tr-8h-6Sm"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HQ7-tY-s5N">
+                                <rect key="frame" x="177.5" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="HQ7-tY-s5N" firstAttribute="centerY" secondItem="K3e-eb-VKB" secondAttribute="centerY" id="3Ux-3H-rQs"/>
                             <constraint firstItem="bU2-qH-Tbb" firstAttribute="leading" secondItem="cLs-fE-1p6" secondAttribute="leading" constant="40" id="6TB-gh-buW"/>
                             <constraint firstItem="cLs-fE-1p6" firstAttribute="trailing" secondItem="LyU-4m-CWd" secondAttribute="trailing" constant="40" id="Ay7-c1-gnk"/>
                             <constraint firstItem="LyU-4m-CWd" firstAttribute="centerY" secondItem="K3e-eb-VKB" secondAttribute="centerY" id="DxH-ft-7mk"/>
                             <constraint firstItem="cLs-fE-1p6" firstAttribute="trailing" secondItem="bU2-qH-Tbb" secondAttribute="trailing" constant="40" id="bWj-6q-NGS"/>
+                            <constraint firstItem="HQ7-tY-s5N" firstAttribute="centerX" secondItem="K3e-eb-VKB" secondAttribute="centerX" id="kiF-Vt-KoK"/>
                             <constraint firstItem="LyU-4m-CWd" firstAttribute="leading" secondItem="cLs-fE-1p6" secondAttribute="leading" constant="40" id="oz2-t4-0qf"/>
                             <constraint firstItem="bU2-qH-Tbb" firstAttribute="top" secondItem="LyU-4m-CWd" secondAttribute="bottom" constant="20" id="tTo-xp-cHU"/>
                         </constraints>
@@ -73,9 +78,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="nXN-CM-3Kz"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="HQ7-tY-s5N" id="vek-YN-Z7d"/>
                         <outlet property="loginButton" destination="bU2-qH-Tbb" id="laB-tc-hUg"/>
                         <outlet property="passwordTextField" destination="Mrj-4q-kqj" id="BNW-m7-VVn"/>
                         <outlet property="usernameTextField" destination="OYE-dv-nMF" id="a1d-oz-4Bl"/>
+                        <segue destination="6Ft-RY-UDX" kind="show" identifier="showSurveys" id="Mzg-iK-cN3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlP-55-SFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -85,6 +92,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Zv3-FW-Eiy">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PcY-tL-EGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IcG-Wo-aPg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Szv-PR-GnD">
@@ -96,7 +104,6 @@
                         <segue destination="EMe-Pl-PXD" kind="relationship" relationship="rootViewController" id="FMA-f2-S5W"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PcY-tL-EGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="-43.628185907046479"/>
         </scene>
@@ -171,6 +178,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="yhL-JV-Slf" firstAttribute="leading" secondItem="3Dd-cg-RgD" secondAttribute="leading" id="16i-nf-hkC"/>
                                     <constraint firstAttribute="trailing" secondItem="yhL-JV-Slf" secondAttribute="trailing" id="IHg-Ke-Rpl"/>
@@ -178,6 +186,10 @@
                                     <constraint firstAttribute="bottom" secondItem="yhL-JV-Slf" secondAttribute="bottom" constant="86" id="lRN-og-PZ0"/>
                                 </constraints>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ur2-qA-qfq">
+                                <rect key="frame" x="160" y="390" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -197,6 +209,7 @@
                     <size key="freeformSize" width="340" height="800"/>
                     <connections>
                         <outlet property="imageView" destination="dyw-3X-ceJ" id="G98-Ry-TZZ"/>
+                        <outlet property="nameLabel" destination="mgw-QK-xgg" id="xvP-Xe-YcC"/>
                         <outlet property="scrollView" destination="3Dd-cg-RgD" id="rK7-BS-ZaP"/>
                     </connections>
                 </viewController>

@@ -35,14 +35,19 @@ open class PhotoCommentViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     open var photoName: String?
     open var photoIndex: Int!
+    open var quizName: String?
     
     override open func viewDidLoad() {
         super.viewDidLoad()
         if let photoName = photoName {
             self.imageView.image = UIImage(named: photoName)
         }
+        if let quizName = quizName {
+            self.nameLabel.text = quizName
+        }
     }
     
+    @IBOutlet weak var nameLabel: UILabel!
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
