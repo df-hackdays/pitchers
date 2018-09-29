@@ -1,3 +1,5 @@
-# Codetrek
+# Digino
 
-This is a framework designed for CLC teachers to create course material, outlines, quizes, exercises to provide to the students and track lesson progress in real time and be able to offer live support. Students will be able to join a session (lesson) virtually and be able to consume lesson content and if needed, be able to get virtual support from the teacher/instructors.
+2. How do we empower Canadians with lower digital literacy levels or who are intimidated by technology to understand the importance of digital literacy for themselves or their children?
+
+Digino is a mobile app that encourages users to improve their digital literacy. This app uses a point-based insentive approach to encourage the user to take daily digital literacy "quizes" which would be a fun way of gaining more information about various digital issues. These points can then be redeemed for various rewards.
