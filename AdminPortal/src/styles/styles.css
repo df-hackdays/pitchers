@@ -81,6 +81,10 @@ color:inherit;
     color:black !important;
 }
 
+.padding10 {
+    padding: 10px;
+}
+
 
 .footer-container-box {
     background-color: #f1f3f4;
@@ -100,6 +104,7 @@ color:inherit;
 }
 
 .login-page-class{
+    width: 100%;
     text-align:center;
 }
 
@@ -209,7 +214,6 @@ position: relative;
 
 .landingPagebodyComponent{
 
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
      min-height: 85vh;
      /*text-align: center;*/
      

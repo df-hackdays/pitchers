@@ -27,6 +27,7 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func registerButtonTapped(_ sender: Any) {
+        dismiss(animated: true)
     }
     
     /*
