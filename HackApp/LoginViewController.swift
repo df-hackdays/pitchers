@@ -34,6 +34,12 @@ class LoginViewController: UIViewController {
         }
     }
     @IBAction func loginTapped(_ sender: UIButton) {
+        guard let userText = usernameTextField.text else {
+            return
+        }
+        guard let passText = passwordTextField.text else {
+            return
+        }
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         
@@ -45,36 +51,24 @@ class LoginViewController: UIViewController {
             // Log-in using an Anonymous authentication provider from Stitch
             // Then create a connection to a remote MongoDB instance
             // Finally pull documents from the remote instance and add them to MongoDB Mobile
-            client.auth.login(withCredential: AnonymousCredential()) { result in
+            let credential = UserPasswordCredential.init(withUsername: usernameTextField.text!, withPassword: passwordTextField.text!)
+            Stitch.defaultAppClient!.auth.login(withCredential: credential) { result in
                 switch result {
                 case .success:
                     let atlasMongoClient = client.serviceClient(fromFactory: remoteMongoClientFactory, withName: "mongodb-atlas")
-//                    atlasMongoClient.db("digilearn").collection("digiquiz").deleteOne( { quizName: "Web"})
-                    
+                
+                    client.callFunction(withName: "increment", withArgs: [userText, passText]) { result in
+                        /* ... */
+                    }
                     atlasMongoClient.db("digilearn").collection("digiquiz")
                         .find(Document()).asArray({ result in
+//                            print(result)
                             switch result {
                             case .success(let result):
-//                                print(result)
                                 for eachDoc in result {
                                     if let quiz = Quiz(document: eachDoc) {
                                         self.quizArray.append(quiz)
                                     }
-                                    
-                                    //                            if let type = eachDoc["questions"] {
-                                    //                                let x = Document(arrayLiteral: type)
-                                    //                                if let q = Question1(document: x) {
-                                    //                                    question1 = q
-                                    //                                    quiz?.questions.append(question1)
-                                    //                                }
-                                    //                            }
-                                    //                            if let quizName = eachDoc["quizName"] as? String {
-                                    //                                quiz.quizName = quizName
-                                    //                            }
-                                    
-                                    //                            if let shortDescription = eachDoc["shortDescription"] as? String {
-                                    //                                quiz.shortDescription = shortDescription
-                                    //                            }
                                 }
                                 
                                 print(self.quizArray)
@@ -91,14 +85,21 @@ class LoginViewController: UIViewController {
                                 }
                             case .failure(let error):
                                 print("failed to find documents: \(error)")
+                                DispatchQueue.main.async {
+                                    self.activityIndicator.stopAnimating()
+                                }
                             }
                         })
                 case .failure(let error):
                     print("failed to login: \(error)")
+                    DispatchQueue.main.async {
+                        self.activityIndicator.stopAnimating()
+                    }
                 }
             }
         } catch _ {
             print("error")
+            self.activityIndicator.stopAnimating()
         }
     }
     override func didReceiveMemoryWarning() {

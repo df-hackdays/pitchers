@@ -74,7 +74,7 @@ class QuizCollectionViewCell: UICollectionViewCell {
         lblQue.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive=true
         lblQue.heightAnchor.constraint(equalToConstant: 150).isActive=true
         
-        let btnWidth: CGFloat = 150
+        let btnWidth: CGFloat = 180
         let btnHeight: CGFloat = 50
         btn1 = getButton(tag: 0)
         addSubview(btn1)
@@ -101,6 +101,7 @@ class QuizCollectionViewCell: UICollectionViewCell {
         let btn=UIButton()
         btn.tag=tag
         btn.setTitle("Option", for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         btn.setTitleColor(UIColor.black, for: .normal)
         btn.backgroundColor=UIColor.white
         btn.layer.borderWidth=1

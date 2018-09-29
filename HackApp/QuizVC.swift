@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StitchCore
 
 struct Question {
     let imgName: String
@@ -23,7 +24,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     var questionsArray = [Question]()
     var score: Int = 0
     var currentQuestionNumber = 1
-    
+    var quiz: Quiz?
     var window: UIWindow?
     
     override func viewDidLoad() {
@@ -49,15 +50,19 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         self.view.addSubview(myCollectionView)
         
-        let que1 = Question(imgName: "img1", questionText: "What is 2 x 2 ?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let que2 = Question(imgName: "img2", questionText: "What is 4 + 2 ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let que3 = Question(imgName: "img1", questionText: "What is 6 / 2 ?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        let que4 = Question(imgName: "img2", questionText: "What is 2 - 2 ?", options: ["2", "4", "1", "0"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let que5 = Question(imgName: "img1", questionText: "What is 12 x 2 ?", options: ["24", "40", "26", "34"], correctAns: 0, wrongAns: -1, isAnswered: false)
-        let que6 = Question(imgName: "img2", questionText: "What is the color of sky?", options: ["Violet", "Yellow", "Blue", "White"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        questionsArray = [que1, que2, que3, que4, que5, que6]
+        if let q = quiz {
+            let op1 = q.options1.components(separatedBy: ",")
+            let que1 = Question(imgName: "img1", questionText: q.q1, options: op1, correctAns: q.a1, wrongAns: -1, isAnswered: false)
+            let op2 = q.options2.components(separatedBy: ",")
+            let que2 = Question(imgName: "img2", questionText: q.q2, options: op2, correctAns: q.a2, wrongAns: -1, isAnswered: false)
+            let op3 = q.options3.components(separatedBy: ",")
+            let que3 = Question(imgName: "img1", questionText: q.q3, options: op3, correctAns: q.a3, wrongAns: -1, isAnswered: false)
+            
+            questionsArray = [que1, que2, que3]
+            
+            setupViews()
+        }
         
-        setupViews()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -90,6 +95,9 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             let v=ResultVC()
             v.score = score
             v.totalScore = questionsArray.count
+            if let q = quiz {
+                v.quiz = q
+            }
             self.navigationController?.pushViewController(v, animated: false)
             return
         }
@@ -142,7 +150,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         lblScore.widthAnchor.constraint(equalTo: lblQueNumber.widthAnchor).isActive=true
         lblScore.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive=true
         lblScore.bottomAnchor.constraint(equalTo: lblQueNumber.bottomAnchor).isActive=true
-        lblScore.text = "Score: \(score) / \(questionsArray.count)"
+//        lblScore.text = "Score: \(score) / \(questionsArray.count)"
     }
     
     let btnPrev: UIButton = {
@@ -177,7 +185,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     let lblScore: UILabel = {
         let lbl=UILabel()
-        lbl.text="0 / 0"
+//        lbl.text="0 / 0"
         lbl.textColor=UIColor.gray
         lbl.textAlignment = .right
         lbl.font = UIFont.systemFont(ofSize: 16)
@@ -197,7 +205,7 @@ extension QuizVC: QuizCVCellDelegate {
         } else {
             score += 1
         }
-        lblScore.text = "Score: \(score) / \(questionsArray.count)"
+//        lblScore.text = "Score: \(score) / \(questionsArray.count)"
         myCollectionView.reloadItems(at: [index])
     }
     
