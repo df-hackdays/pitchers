@@ -63,8 +63,6 @@ class Header extends React.Component {
 
     this.setState({ componentsmenuopen: false });
   };
-  conditRenderEssential = () => this.props.userid ? (
-    <Button color="secondary" align="right" onClick={this.props.startLogout}> Logout</Button>) : (<Button color="secondary" align="right"><Link to="/login"> Login</Link></Button>)
 
   render() {
 
@@ -110,10 +108,6 @@ class Header extends React.Component {
               <Typography variant="title" color="secondary" className="headertypoclass" >
                 Digino Admin Portal
           </Typography>
-
-              {
-                this.conditRenderEssential()
-              }
 
             </Toolbar>
           </AppBar>
