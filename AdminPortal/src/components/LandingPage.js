@@ -16,7 +16,7 @@ const stitchClient = Stitch.defaultAppClient;
 const OnClickLogin = (props) => () => {
   stitchClient.auth.loginWithCredential(new AnonymousCredential()).then(user => {
     console.log(`logged in anonymously as user ${user.id}`)
-    props.history.push("/addquizzes");
+    props.history.push("/quizzes");
   });
 
 };
