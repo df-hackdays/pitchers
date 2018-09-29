@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import StitchCore
+import StitchLocalMongoDBService
+import StitchRemoteMongoDBService
 
 class RegisterVC: UIViewController {
 
@@ -14,11 +17,11 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        activityIndicator.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,9 +30,52 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func registerButtonTapped(_ sender: Any) {
-        dismiss(animated: true)
+        guard let firstNameText = firstNameTextField.text else {
+            return
+        }
+        guard let lastNameText = lastNameTextField.text else {
+            return
+        }
+        guard let emailAddressText = emailAddressTextField.text else {
+            return
+        }
+        guard let passwordText = passwordTextField.text else {
+            return
+        }
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        
+        do {
+            let client = try Stitch.initializeDefaultAppClient(
+                withClientAppID: "digiknow-mcfek"
+            )
+            Stitch.defaultAppClient!.auth.login(withCredential: AnonymousCredential.init()) { result in
+                switch result {
+                case .success:
+                    client.callFunction(withName: "adduserinfo", withArgs: [firstNameText, lastNameText, emailAddressText, passwordText]) { result in
+                        /* ... */
+                        switch result {
+                        case .success:
+                            self.dismiss(animated: true)
+                        case .failure(let error):
+                            print("failed to login: \(error)")
+                            DispatchQueue.main.async {
+                                self.activityIndicator.stopAnimating()
+                            }
+                        }
+                    }
+                case .failure(let error):
+                    print("failed to login: \(error)")
+                    DispatchQueue.main.async {
+                        self.activityIndicator.stopAnimating()
+                    }
+                }
+            }
+        } catch _ {
+            print("error")
+            self.activityIndicator.stopAnimating()
+        }
     }
-    
     /*
     // MARK: - Navigation
 
